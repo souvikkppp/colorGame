@@ -8,9 +8,10 @@
       body {
         justify-content: center;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         height: 100vh;
         width: 100vw;
+        flex-direction: column;
       }
       #board-parent {
         display: flex;
@@ -83,9 +84,12 @@
       <p>BLUE</p>
       <p>YELLOW</p>
     </div>
+    <h1 id="count" style="color: red;"></h1>
 
     <script>
       var bd = document.getElementById("board-parent");
+      var ct = document.getElementById("count");
+      var num = 0;
       var colors = ["red", "green", "black", "blue", "yellow"];
       function changeColor() {
         for (let k in bd.childNodes) {
@@ -95,8 +99,16 @@
           }
         }
       }
-      changeColor()
-     setInterval(() => {
+      changeColor();
+      function count(){
+       ct.innerHTML = num;
+      }
+    setInterval(() => {
+      num++;
+      count()
+    }, 1100);
+    setInterval(() => {
+      num = 0;
       changeColor()
     }, 15000);
     </script>
