@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        justify-content: center;
+        display: flex;
+        align-items: flex-start;
+        height: 100vh;
+        width: 100vw;
+      }
+      #board-parent {
+        display: flex;
+        max-width: 500px;
+        padding: 1rem;
+        flex-wrap: wrap;
+      }
+      p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 0.5rem;
+        margin: 0;
+        font-weight: bolder;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="board-parent">
+      <p>YELLOW</p>
+      <p>BLACK</p>
+      <p>GREEN</p>
+
+      <p>BLUE</p>
+      <p>GREEN</p>
+      <p>YELLOW</p>
+      <p>BLUE</p>
+      <p>BLACK</p>
+      <p>GREEN</p>
+      <p>RED</p>
+      <p>YELLOW</p>
+      <p>BLACK</p>
+
+      <p>RED</p>
+      <p>BLUE</p>
+      <p>RED</p>
+      <p>BLUE</p>
+      <p>GREEN</p>
+      <p>YELLOW</p>
+      <p>BLUE</p>
+      <p>BLACK</p>
+      <p>GREEN</p>
+      <p>RED</p>
+      <p>YELLOW</p>
+      <p>BLACK</p>
+
+      <p>RED</p>
+      <p>BLUE</p>
+
+      <p>BLACK</p>
+
+      <p>BLUE</p>
+      <p>BLACK</p>
+      <p>GREEN</p>
+      <p>RED</p>
+      <p>YELLOW</p>
+      <p>BLACK</p>
+
+      <p>RED</p>
+      <p>BLUE</p>
+
+      <p>BLACK</p>
+      <p>GREEN</p>
+
+      <p>RED</p>
+      <p>BLUE</p>
+      <p>YELLOW</p>
+      <p>GREEN</p>
+
+      <p>RED</p>
+      <p>BLUE</p>
+      <p>YELLOW</p>
+    </div>
+
+    <script>
+      var bd = document.getElementById("board-parent");
+      var colors = ["red", "green", "black", "blue", "yellow"];
+      function changeColor() {
+        for (let k in bd.childNodes) {
+          if (bd.childNodes[k].nodeName === "P") {
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            bd.childNodes[k].style.color = randomColor;
+          }
+        }
+      }
+      changeColor()
+      setTimeout(function () {
+        window.location.reload();
+      }, 5000);
+    </script>
+  </body>
+</html>
